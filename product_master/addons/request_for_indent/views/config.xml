@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--        Floor Type-->
+        <record id="floor_type_tree" model="ir.ui.view">
+            <field name="name">floor.type.tree</field>
+            <field name="model">floor.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="floor_type_form" model="ir.ui.view">
+            <field name="name">floor.type.form</field>
+            <field name="model">floor.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="floor_type_action" model="ir.actions.act_window">
+            <field name="name">Floor Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">floor.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Purpose-->
+        <record id="purpose_tree" model="ir.ui.view">
+            <field name="name">purpose.tree</field>
+            <field name="model">purpose</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="purpose"/>
+                </tree>
+            </field>
+        </record>
+        <record id="purpose_form" model="ir.ui.view">
+            <field name="name">purpose.form</field>
+            <field name="model">purpose</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="purpose"/>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="purpose_action" model="ir.actions.act_window">
+            <field name="name">Purpose</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purpose</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id ="menu_floor_type_main" name="Indent" parent="purchase.menu_purchase_config"/>
+        <menuitem id="menu_floor_type" name="Floor Type" sequence="7" action="floor_type_action"
+                  parent="menu_floor_type_main"/>
+        <menuitem id="menu_purpose" name="Purpose" sequence="8" action="purpose_action"
+                  parent="menu_floor_type_main"/>
+
+    </data>
+</odoo>

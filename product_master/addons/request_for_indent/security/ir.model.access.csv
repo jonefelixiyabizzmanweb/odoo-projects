@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_request_indent,access_request_indent,model_request_indent,,1,1,1,1
+access_request_indent_line,access_request_indent_line,model_request_indent_line,,1,1,1,1
+access_floor_type,access_floor_type,model_floor_type,,1,1,1,1
+access_purpose,access_purpose,model_purpose,,1,1,1,1

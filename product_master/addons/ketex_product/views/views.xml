@@ -1,0 +1,211 @@
+<odoo>
+  <data>
+   
+
+    <record model="ir.ui.view" id="ketex_product.list">
+      <field name="name">ketex_product list</field>
+      <field name="model">ketex.product</field>
+      <field name="arch" type="xml">
+        <tree>
+			<field name="field1" />
+			<field name="field2"  />
+			<field name="field3" />
+			<field name="product_code" />
+			<field name="description" />
+		</tree>
+      </field>
+    </record>
+
+	<record model="ir.ui.view" id="ketex_product.form">
+		<field name="name">ketex_product form</field>
+		<field name="model">ketex.product</field>
+		<field name="arch" type="xml">
+			<form>
+				<header>
+					<button name="comp_name"  string="Generate Code" type="object" class="oe_highlight" />
+				</header>
+				<sheet>
+					<group>
+						<group>
+							<!-- <separator colspan="4" string="Grouping"/> -->
+							<field name="combination_name"/>
+							<field  name="bool0" invisible="1"/>
+							<field name="field1" attrs="{'invisible':[('bool0','=',False)]}" />
+							<!-- <field name="abb1"/> -->
+							<field name="bool1" invisible="1"/>
+							<field name="field2" attrs="{'invisible':[('bool1','=',False)]}" />
+							<field name="bool2" invisible="1"/>
+							<field name="field3" attrs="{'invisible':[('bool2','=',False)]}" />
+							
+							<field name="product_code" />
+							<field name="description" />
+							<field name="desc1" />
+							<field name="ttwr" />
+							<field name="rate" />
+							<field name="category" />
+							<field name="unit" />
+							<field name="chapter_head" />
+							<!-- <field name="abb2"/> -->
+						</group>
+						<group>
+							<!-- <separator colspan="4" string="Gauntlet"/> -->
+							<field name="bool3"  invisible="1" />
+							<field name="gauntlet_variety" attrs="{'invisible':[('bool3','=',False)]}"/>
+							<field name="bool4"  invisible="1"/>
+							<field name="laterial_type" attrs="{'invisible':[('bool4','=',False)]}" />
+							<field name="bool5"  invisible="1"/>
+							<field name="edge_wall" attrs="{'invisible':[('bool5','=',False)]}" />
+							<field name="bool11"  invisible="1"/>
+							<field name="absent" attrs="{'invisible':[('bool11','=',False)]}"/>
+							<field name="bool6"  invisible="1"/>
+							<field name="dia" attrs="{'invisible':[('bool6','=',False)]}"/>
+							<field name="bool7"  invisible="1" />
+							<field name="panel" attrs="{'invisible':[('bool7','=',False)]}"/>
+							<field name="bool8"  invisible="1"/>
+							<field name="height" attrs="{'invisible':[('bool8','=',False)]}"/>
+							<field name="bool9"  invisible="1" />
+							<field name="tubes" attrs="{'invisible':[('bool9','=',False)]}"/>
+							<field name="bool10"  invisible="1"/>
+							<field name="pitch" attrs="{'invisible':[('bool10','=',False)]}"/>
+						</group>
+					</group>
+					<notebook>
+						<page string="Other Information">
+							<group>
+								<group>
+									<field name="type"/>
+									<field name="categ_id"/>
+									<field name="default_code"/>
+									<field name="barcode"/>
+								</group>
+								<group>
+									<field name="list_price"/>
+									<field name="tax_ids" widget="many2many_tags"/>
+									<field name="standard_price"/>
+									<field name="company_id"/>
+								</group>
+							</group>
+						</page>
+						<page string="Sales">
+							<group string="Invoicing">
+								<field name="invoice_policy" widget="radio"/>
+								<field name="expense_policy" widget="radio"/>
+							</group>
+							<group string="Sales Description" name="description">
+								<field name="description_sale" nolabel="1" placeholder="This note is added to sales orders and invoices."/>
+							</group>
+						</page>
+						
+<!--						<page string="Purchase">-->
+<!--							&lt;!&ndash; <field name="seller_ids" />  &ndash;&gt;-->
+<!--							<group string="Vendor Bills" name="bill"/>-->
+<!--							&lt;!&ndash; <field name="supplier_taxes_id" widget="many2many_tags"/>  &ndash;&gt;-->
+<!--							<field name="purchase_method" widget="radio"/>-->
+<!--							<group string="Purchase Description">-->
+<!--								   <field name="description_purchase" nolabel="1"-->
+<!--										placeholder="This note is added to purchase orders."/>-->
+<!--							 </group>-->
+<!--						 </page>-->
+						<page string="inventory">
+							<group>
+							<group name="weight" string="Logistics" >
+								<label for="volume"/>
+								<div class="o_row">
+									<field name="volume" class="oe_inline"/> m
+									
+								</div>
+								<label for="weight"/>
+								<div class="o_row">
+									<field name="weight" class="oe_inline"/> kgs
+						`
+								</div>
+								 <label for="produce_delay" />
+									<div>
+								<field name="produce_delay" class="oe_inline"/> days
+								</div>
+								<label for="sale_delay" />
+								<div >
+									<field name="sale_delay" class="oe_inline" style="vertical-align:baseline"/> days
+								</div>
+							</group>
+							
+							</group>
+							 <group string="Counterpart Locations" name="stock_property" >
+								<field name="property_stock_production"/>
+								<field name="property_stock_inventory"/>
+							</group>
+							 <group string="Description for Delivery Orders">
+								<field name="description_pickingout" nolabel="1" placeholder="This note is added to delivery orders."/>
+							</group>
+							<group string="Description for Receipts">
+								<field name="description_pickingin" nolabel="1" placeholder="This note is added to receipt orders (e.g. where to store the product in the warehouse)."/>
+							</group>
+						</page>
+						<page string="Accounting" name="invoicing">
+							<group name="properties">
+
+								<group string="Receivables">
+									<field name="property_account_income_id"/>
+								</group>
+
+								<group string="Payables" name="payables">
+									<field name="property_account_expense_id"/>
+								</group>
+
+							</group>
+							<group name="accounting"/>
+						</page>
+					</notebook>
+				</sheet>
+			
+			</form>
+		</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="ketex_product_action">
+      <field name="name">Product</field>
+      <field name="res_model">ketex.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    
+
+    
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Ketex" id="ketex_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Product" id="ketex_product_menu_1" parent="ketex_menu_root" action="ketex_product_action"/>
+    <menuitem name="Cofiguration" id="ketex_config_menu_2" parent="ketex_menu_root" />
+
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="ketex_product.menu_1_list" parent="ketex_product.menu_1"
+              action="ketex_product.action_window"/>
+    <menuitem name="Server to list" id="ketex_product" parent="ketex_product.menu_2"
+              action="ketex_product.action_server"/>
+-->
+  </data>
+</odoo>
+
+<!--  <xpath expr="//page[@name='general_information']" position="after">-->
+<!--                <page name="variants" string="Variants" groups="product.group_product_variant">-->
+<!--                    <field name="attribute_line_ids" widget="one2many" context="{'show_attribute': False}">-->
+<!--                        <tree string="Variants" editable="bottom">-->
+<!--                            <field name="attribute_id" attrs="{'readonly': [('id', '!=', False)]}"/>-->
+<!--                            <field name="value_ids" widget="many2many_tags" options="{'no_create_edit': True}" context="{'default_attribute_id': attribute_id, 'show_attribute': False}"/>-->
+<!--                        </tree>-->
+<!--                    </field>-->
+<!--                        <p class="oe_grey oe_edit_only">-->
+<!--                        <strong>Warning</strong>: adding or deleting attributes-->
+<!--                        will delete and recreate existing variants and lead-->
+<!--                        to the loss of their possible customizations.-->
+<!--                    </p>-->
+<!--                </page>-->
+<!--            </xpath>-->

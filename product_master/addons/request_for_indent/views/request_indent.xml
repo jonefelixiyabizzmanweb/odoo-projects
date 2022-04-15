@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="request_indent_tree" model="ir.ui.view">
+            <field name="name">request.indent.form</field>
+            <field name="model">request.indent</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="purpose"/>
+                    <field name="cost_center"/>
+                    <field name="date"/>
+                    <field name="shop_floor"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="request_indent_form" model="ir.ui.view">
+            <field name="name">request.indent.form</field>
+            <field name="model">request.indent</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary"
+                                type="object"/>
+                        <field name="state" widget="statusbar"/>
+                        <!--                        options="{'clickable':1}"-->
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="order_reference" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="purpose"/>
+                                <field name="cost_center"/>
+                            </group>
+                            <group>
+                                <field name="date"/>
+                                <field name="shop_floor"/>
+                                <field name="user_id"/>
+                                <field name="altered_by"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Products">
+                                <group>
+                                    <field name="request_indent_line_ids" widget="one2many_selectable" nolabel="1">
+                                        <tree editable="bottom">
+                                            <field name="request_ids" invisible="1"/>
+                                            <field name="product_id" options="{'no_create': True}" width="25%"/>
+                                            <field name="description" width="15%"/>
+                                            <field name="quantity" width="15%"/>
+                                            <field name="uom_id" width="15%"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                `
+                            </page>
+                            <page name="description_page" string="Narration">
+                                <field name="description" type="html"/>
+                                <div class="d-none oe_clear"/>
+                            </page>
+                            <page string="Other Information">
+                                <group>
+                                    <group name="other_info">
+                                        <field name="users_id" domain="[('share', '=', False)]"
+                                               widget="many2one_avatar_user"/>
+                                        <field name="incoterm_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="invoice_status"/>
+                                        <field name="payment_term_id"/>
+                                        <field name="fiscal_position_id"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="request_indent_kanban" model="ir.ui.view">
+            <field name="name">request.indent.kanban</field>
+            <field name="model">request.indent</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="cost_center"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li>
+                                            RQ NO:
+                                            <field name="order_reference"/>
+                                        </li>
+                                        <li>
+                                            Purpose:
+                                            <field name="purpose"/>
+                                        </li>
+                                        <li>
+                                            Cost Center:
+                                            <field name="cost_center"/>
+                                        </li>
+                                        <li>
+                                            Date:
+                                            <field name="date"/>
+                                        </li>
+                                        <li>
+                                            Shop Floor:
+                                            <field name="shop_floor"/>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="request_indent_view_form_action" model="ir.actions.act_window">
+            <field name="name">Request For Indent</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">request.indent</field>
+            <field name="view_mode">tree,form,kanban</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    No unavailable list found.
+                </p>
+                <p>
+                    Once the list get's started, you can review and compare them.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_request_indent" name="Request For Indent" parent="purchase.menu_procurement_management"
+                  sequence="10" action="request_indent_view_form_action"/>
+    </data>
+</odoo>

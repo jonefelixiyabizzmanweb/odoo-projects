@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ketex_product,ketex.product,model_ketex_product,base.group_user,1,1,1,1
+access_ketex_config1,ketex.config1,model_ketex_config1,base.group_user,1,1,1,1
+access_ketex_config2,ketex.config2,model_ketex_config2,base.group_user,1,1,1,1
+access_ketex_config3,ketex.config3,model_ketex_config3,base.group_user,1,1,1,1
+access_ketex_config4,ketex.config4,model_ketex_config4,base.group_user,1,1,1,1
+access_ketex_config5,ketex.config5,model_ketex_config5,base.group_user,1,1,1,1
+access_ketex_config6,ketex.config6,model_ketex_config6,base.group_user,1,1,1,1
+
+access_ketex_config8,ketex.config8,model_ketex_config8,base.group_user,1,1,1,1
+access_ketex_config9,ketex.config9,model_ketex_config9,base.group_user,1,1,1,1

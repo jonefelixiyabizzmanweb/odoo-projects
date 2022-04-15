@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+<!--        uom-->
+        <record id="customer_type_tree" model="ir.ui.view">
+            <field name="name">customer.type.tree</field>
+            <field name="model">customer.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        <record id="customer_type_form" model="ir.ui.view">
+            <field name="name">customer.type.form</field>
+            <field name="model">customer.type</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="customer_type_action" model="ir.actions.act_window">
+            <field name="name">Customer Type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">customer.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_partner_category_form" name="Customer Type" sequence="10" action="customer_type_action" parent="contacts.res_partner_menu_config"/>
+
+    </data>
+</odoo>

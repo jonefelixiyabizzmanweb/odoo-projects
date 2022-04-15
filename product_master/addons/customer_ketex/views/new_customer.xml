@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+          <record id="customer_form" model="ir.ui.view">
+            <field name="name">customer.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                    <separator colspan="4" string="Debitor/Creditor"/>
+                        <field name="creditor"/>
+                        <field name="contact_person"/>
+                        <field name="customer_type"/>
+                        <field name="tds"/>
+                        <field name="tds_1" attrs="{'invisible':[('tds','!=','Yes')]}"/>
+                        <field name="country_id"/>
+                        <field name="state_id" options="{'no_create_edit': True}"/>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="after">
+                        <field name="tcs"/>
+                        <field name="tcs_1" attrs="{'invisible':[('tcs','!=','Yes')]}"/>
+                        <field name="cr"/>
+                        <label for="distance" string="Distance From KGP"/>
+                        <div class="o_row">
+                            <field name="distance"/>
+                            <field name="distance_unit"/>
+                        </div>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="before">
+                      <div class="oe_title">
+                        <h1>
+                            <field name="cus_ref1" readonly="1"/>
+                        </h1>
+                    </div>
+                </xpath>
+            </field>
+          </record>
+        <record id="action_customer_form" model="ir.actions.act_window">
+            <field name="name">CustomerMaster</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,33 @@
+<odoo>
+    <template id="sales_planning">
+        <t t-call="website.layout">
+            <div class="page" align="center">
+                <h3>Login Form</h3>
+                <form action="\add_login" methods="['POST']">
+                    <table width="40%" align="left">
+                        <tr>
+                            <th width="25%">User Name</th>
+                            <td width="30%">
+                                <input class="form-control" type="char" name="user_name" required="1"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="25%">Password</th>
+                            <td width="30%">
+                                <input class="form-control" type="char" name="password" required="1"/>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="btn btn-primary" type="submit" string="Create"/>
+                </form>
+            </div>
+        </t>
+    </template>
+    <template id="login_success">
+        <t t-call="website.layout">
+            <div class="page" align="center">
+                <p>Login Successfully</p>
+            </div>
+        </t>
+    </template>
+</odoo>

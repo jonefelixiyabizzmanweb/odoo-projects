@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+<!--		Request for Indent sequence number-->
+		<record id="seq_order_request_indent" model="ir.sequence">
+			<field name="name">Request Indent</field>
+			<field name="code">request_for_indent.request.indent</field>
+			<field name="prefix">REQ</field>
+			<field name="padding">4</field>
+			<field name="company_id" eval='False'/>
+		</record>
+    </data>
+</odoo>

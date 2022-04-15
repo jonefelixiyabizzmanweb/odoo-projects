@@ -1,0 +1,333 @@
+<odoo>
+    <data>
+		<record model="ir.ui.view" id="ketex_config_list1">
+		  <field name="name">ketex_config list1</field>
+		  <field name="model">ketex.config1</field>
+		  <field name="arch" type="xml">
+			<tree>
+				<field name="field1" />
+				<field name="code" />
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form1">
+			<field name="name">ketex_config form1</field>
+			<field name="model">ketex.config1</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="field1" />
+								<field name="code" />
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action1">
+		  <field name="name">Field1</field>
+		  <field name="res_model">ketex.config1</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list2">
+		  <field name="name">ketex_config list2</field>
+		  <field name="model">ketex.config2</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="field2"  />
+				<field name="code" />
+				<!-- <field name="field1" /> -->
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form2">
+			<field name="name">ketex_config form2</field>
+			<field name="model">ketex.config2</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								
+								<field name="field2"  />
+								<field name="code" />
+								<!-- <field name="field1" /> -->
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action2">
+		  <field name="name">Field2</field>
+		  <field name="res_model">ketex.config2</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list3">
+		  <field name="name">ketex_config list3</field>
+		  <field name="model">ketex.config3</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				
+				<field name="field3" />
+				<field name="code" />
+				<!-- <field name="field2"  /> -->
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form3">
+			<field name="name">ketex_config form3</field>
+			<field name="model">ketex.config3</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								
+								<field name="field3" />
+								<field name="code" />
+								<!-- <field name="field2"  /> -->
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+		<record model="ir.actions.act_window" id="ketex_config_action3">
+		  <field name="name">Field3</field>
+		  <field name="res_model">ketex.config3</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list4">
+		  <field name="name">ketex_config list4</field>
+		  <field name="model">ketex.config4</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="variety"/>
+				<field name="code"/>
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form4">
+			<field name="name">ketex_config form4</field>
+			<field name="model">ketex.config4</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="variety"/>
+								<field name="code"/>
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action4">
+		  <field name="name">Variety</field>
+		  <field name="res_model">ketex.config4</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list5">
+		  <field name="name">ketex_config list5</field>
+		  <field name="model">ketex.config5</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="type_field"/>
+				<field name="code"/>
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form5">
+			<field name="name">ketex_config form5</field>
+			<field name="model">ketex.config5</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="type_field"/>
+								<field name="code"/>
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action5">
+		  <field name="name">Type</field>
+		  <field name="res_model">ketex.config5</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list6">
+		  <field name="name">ketex_config list6</field>
+		  <field name="model">ketex.config6</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="edge_wall"/>
+				<field name="code"/>
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form6">
+			<field name="name">ketex_config form6</field>
+			<field name="model">ketex.config6</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="edge_wall"/>
+								<field name="code"/>
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action6">
+		  <field name="name">Edge Wall</field>
+		  <field name="res_model">ketex.config6</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+
+		<record model="ir.ui.view" id="ketex_config_list8">
+		  <field name="name">ketex_config list8</field>
+		  <field name="model">ketex.config8</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="absent"/>
+				<field name="code"/>
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form8">
+			<field name="name">ketex_config form8</field>
+			<field name="model">ketex.config8</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+								<field name="absent"/>
+								<field name="code"/>
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action8">
+		  <field name="name">9/10</field>
+		  <field name="res_model">ketex.config8</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_list9">
+		  <field name="name">ketex_config list9</field>
+		  <field name="model">ketex.config9</field>
+		  <field name="arch" type="xml">
+			<tree>
+				
+				<field name="field1" />
+				<!-- <field name="abb1"/> -->
+				<!-- <field name="bool1" attrs="{'invisible':[('bool1','=',True)]}"/> -->
+				<field name="field2" />
+				<!-- <field name="bool2" attrs="{'invisible':[('bool2','=',True)]}"/> -->
+				<field name="field3" />
+				
+			</tree>
+		  </field>
+		</record>
+		<record model="ir.ui.view" id="ketex_config_form9">
+			<field name="name">ketex_config form9</field>
+			<field name="model">ketex.config9</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+							<group>
+							
+								<field name="c_name"/>
+								<field name="bool0" attrs="{'invisible':[('bool0','=',True)]}"/>
+								<field name="field1"  attrs="{'invisible':[('bool0','=',False)]}"/>
+								<!-- <field name="abb1"/> -->
+								<field name="bool1" attrs="{'invisible':[('bool1','=',True)]}"/>
+								<field name="field2" attrs="{'invisible':[('bool1','=',False)]}"/>
+								<field name="bool2" attrs="{'invisible':[('bool2','=',True)]}"/>
+								<field name="field3" attrs="{'invisible':[('bool2','=',False)]}"/>
+								<field name="bool3" />
+							<!-- <field name="gauntlet_variety" attrs="{'invisible':[('bool3','=',False)]}"/> -->
+							<field name="bool4" />
+							<!-- <field name="laterial_type" attrs="{'invisible':[('bool4','=',False)]}" /> -->
+							<field name="bool5" />
+							<!-- <field name="edge_wall" attrs="{'invisible':[('bool5','=',False)]}" /> -->
+							<field name="bool11" />
+							<!-- <field name="absent" attrs="{'invisible':[('bool11','=',False)]}"/> -->
+							<field name="bool6" />
+							<!-- <field name="dia" attrs="{'invisible':[('bool6','=',False)]}"/> -->
+							<field name="bool7" />
+							<!-- <field name="panel" attrs="{'invisible':[('bool7','=',False)]}"/> -->
+							<field name="bool8" />
+							<!-- <field name="height" attrs="{'invisible':[('bool8','=',False)]}"/> -->
+							<field name="bool9" />
+							<!-- <field name="tubes" attrs="{'invisible':[('bool9','=',False)]}"/> -->
+							<field name="bool10" />
+							<!-- <field name="pitch" attrs="{'invisible':[('bool10','=',False)]}"/> -->
+								
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+
+		<record model="ir.actions.act_window" id="ketex_config_action9">
+		  <field name="name">Combination</field>
+		  <field name="res_model">ketex.config9</field>
+		  <field name="view_mode">tree,form</field>
+		</record>
+	
+	<menuitem name="Field 1" id="ketex_config_submenu_1" parent="ketex_config_menu_2" action="ketex_config_action1"/>
+	<menuitem name="Field 2" id="ketex_config_submenu_2" parent="ketex_config_menu_2" action="ketex_config_action2"/>
+	<menuitem name="Field 3" id="ketex_config_submenu_3" parent="ketex_config_menu_2" action="ketex_config_action3"/>
+	<menuitem name="Variety" id="ketex_config_submenu_4" parent="ketex_config_menu_2" action="ketex_config_action4"/>
+	<menuitem name="Type" id="ketex_config_submenu_5" parent="ketex_config_menu_2" action="ketex_config_action5"/>
+	<menuitem name="Edge Wall" id="ketex_config_submenu_6" parent="ketex_config_menu_2" action="ketex_config_action6"/>
+	<!-- <menuitem name="Category" id="ketex_config_submenu_7" parent="ketex_config_menu_2" action="ketex_config_action7"/> -->
+	<menuitem name="9/10" id="ketex_config_submenu_8" parent="ketex_config_menu_2" action="ketex_config_action8"/>
+	<menuitem name="Combination" id="ketex_config_submenu_9" parent="ketex_config_menu_2" action="ketex_config_action9"/>
+    </data>
+</odoo>

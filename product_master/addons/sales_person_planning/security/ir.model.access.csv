@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sales_location,access_sales_location,model_sales_location,,1,1,1,1
+access_sales_role,access_sales_role,model_sales_role,,1,1,1,1
+access_color_details,access_color_details,model_color_details,,1,1,1,1
+access_sales_planning,access_sales_planning,model_sales_planning,,1,1,1,1
+access_by_employee,access_by_employee,model_by_employee,,1,1,1,1
+access_by_role,access_by_role,model_by_role,,1,1,1,1
+access_lost_wizard,access_lost_wizard,model_lost_wizard,,1,1,1,1
+access_employee_wizard,access_employee_wizard,model_employee_wizard,,1,1,1,1
+access_role_wizard,access_role_wizard,model_role_wizard,,1,1,1,1

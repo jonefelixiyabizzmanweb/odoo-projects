@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record id="sales_employees_tree" model="ir.ui.view">-->
+<!--            <field name="name">sales.employee.form</field>-->
+<!--            <field name="model">sales.employee</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree string="Weight/number ratio" editable="bottom">-->
+<!--                    <field name="sequence" widget="handle"/>-->
+<!--                    <field name="employee"/>-->
+<!--                    <field name="color" widget="color"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+        <record id="sales_location_tree" model="ir.ui.view">
+            <field name="name">sales.location.form</field>
+            <field name="model">sales.location</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence" widget="handle"/>
+                    <field name="location"/>
+                    <field name="city"/>
+                    <field name="state_id"/>
+                    <field name="zip"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sales_roles_tree" model="ir.ui.view">
+            <field name="name">sales.role.form</field>
+            <field name="model">sales.role</field>
+            <field name="arch" type="xml">
+                <tree string="Weight/number ratio" editable="bottom">
+                    <field name="sequence" widget="handle"/>
+                    <field name="role_name"/>
+                    <field name="employee" widget="many2many_tags"/>
+                    <field name="color" widget="color"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sales_location_form" model="ir.ui.view">
+            <field name="name">sales.location.form</field>
+            <field name="model">sales.location</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title pr-0">
+                            <h1 class="d-flex flex-row justify-content-between">
+                                <field name="location" class="o_task_name text-truncate" placeholder="Location Name"/>
+                            </h1>
+                        </div>
+
+                        <group>
+                            <group>
+                                <span class="o_form_label o_td_label" name="address_name">
+                                    <b>Address</b>
+                                </span>
+                                <div class="o_address_format">
+                                    <field name="street" placeholder="Street..." class="o_address_street"/>
+                                    <field name="street2" placeholder="Street 2..." class="o_address_street"/>
+                                    <field name="city" placeholder="City" class="o_address_city"/>
+                                    <field name="state_id" class="o_address_state" placeholder="State"
+                                           options="{'no_open': True, 'no_quick_create': True}"
+                                           context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>
+                                    <field name="zip" placeholder="ZIP" class="o_address_zip"/>
+                                    <field name="country_id" placeholder="Country" class="o_address_country"
+                                           options='{"no_open": True, "no_create": True}'/>
+                                </div>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        <record id="sales_employees_action" model="ir.actions.act_window">-->
+<!--            <field name="name">Employee</field>-->
+<!--            <field name="type">ir.actions.act_window</field>-->
+<!--            <field name="res_model">sales.employee</field>-->
+<!--            <field name="view_mode">tree</field>-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_smiling_face">-->
+<!--                    Create Employees-->
+<!--                </p>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="sales_location_action" model="ir.actions.act_window">
+            <field name="name">Location</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sales.location</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Location
+                </p>
+            </field>
+        </record>
+
+        <record id="sales_roles_action" model="ir.actions.act_window">
+            <field name="name">Roles</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sales.role</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create Roles
+                </p>
+            </field>
+        </record>
+
+        <record id="color_details_tree" model="ir.ui.view">
+            <field name="name">color.details.tree</field>
+            <field name="model">color.details</field>
+            <field name="arch" type="xml">
+
+                <tree string="Tags" editable="bottom">
+                    <field name="name"/>
+                    <field name="color" widget="color_picker" options="{'clickable':1}"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="color_details_action" model="ir.actions.act_window">
+            <field name="name">Colors</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">color.details</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+
+    </data>
+
+
+</odoo>
