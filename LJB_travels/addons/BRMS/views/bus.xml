@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_bus_form" model="ir.ui.view">
+            <field name="name">bus.details.form</field>
+            <field name="model">bus.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"></field>
+                    <group>
+                        <group string="Bus Details">
+                            <field name="bus_name"></field>
+                            <field name="bus_type"></field>
+                            <field name="model_name"></field>
+                            <field name="code"></field>
+                            <field name="number_plate"></field>
+                        </group>
+                        <group>
+                            <field name="seat_capacity"></field>
+                            <field name="fuel_capacity"></field>
+                            <field name="odoometer"></field>
+
+                            <field name="organization"></field>
+                        </group>
+                   </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bus_tree" model="ir.ui.view">
+            <field name="name">bus.details.tree</field>
+            <field name="model">bus.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bus_name"></field>
+                    <field name="model_name"></field>
+                    <field name="code"></field>
+                    <field name="number_plate"></field>
+                    <field name="organization"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="view_bus_search" model="ir.ui.view">
+            <field name="name">bus.details.search</field>
+            <field name="model">bus.details</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="bus_name"></field>
+                    <field name="bus_type"></field>
+                    <field name="model_name"></field>
+                    <field name="code"></field>
+                    <field name="organization"></field>
+                </search>
+            </field>
+        </record>
+
+        <record id="bus_view_kanban" model="ir.ui.view">
+           <field name="name">bus.details.kanban</field>
+           <field name="model">bus.details</field>
+           <field name="arch" type="xml">
+               <kanban>
+                    <field name="bus_name"></field>
+                    <field name="model_name"></field>
+                    <field name="code"></field>
+                    <field name="number_plate"></field>
+                    <field name="organization"></field>
+                   <templates>
+                       <t t-name="kanban-box">
+                           <div t-attf-class="oe_kanban_global_click">
+                               <div class="oe_kanban_details">
+                                   <ul>
+                                       <li>
+                                           Name:<field name="bus_name"/>
+                                       </li>
+                                       <li>
+                                           Type:<field name="bus_type"/>
+                                       </li>
+                                       <li>
+                                           Code:<field name="code"/>
+                                       </li>
+                                       <li>
+                                           N.P<field name="number_plate"/>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </t>
+                   </templates>
+               </kanban>
+            </field>
+        </record>
+
+         <record id="bus_details_action" model="ir.actions.act_window">
+            <field name="name">Bus</field>
+            <field name="res_model">bus.details</field>
+            <field name="view_mode">tree,form,search,kanban</field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_language_form" model="ir.ui.view">
+            <field name="name">language.details.form</field>
+            <field name="model">language.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"></field>
+                                <field name="code"></field>
+                            </group>
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+
+        <record id="view_language_tree" model="ir.ui.view">
+            <field name="model">language.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="language_details_action" model="ir.actions.act_window">
+            <field name="name">Language</field>
+            <field name="res_model">language.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>

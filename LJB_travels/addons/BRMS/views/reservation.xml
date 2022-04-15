@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_Reservation_form" model="ir.ui.view">
+            <field name="name">reservation.details.form</field>
+            <field name="model">reservation.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button id="button_confirm" name="action_confirm" string="Confirm" class="btn-primary"
+                                states="draft"
+                                type="object"/>
+                        <button id="button_done" name="action_done" string="Done" class="btn-primary" states="confirm"
+                                type="object"/>
+                        <button id="button_booking" name="action_booking" string="Booking" class="btn-primary"
+                                states="done"
+                                type="object"/>
+                        <button id="button_draft" name="action_draft" string="Draft" class="btn-primary" states="close"
+                                type="object"/>
+                        <button id="button_cancel" name="action_cancel" string="Cancel"
+                                states="draft,done,confirm,booking"
+                                type="object"/>
+                        <field name="state" widget="statusbar" options="{'clickable': '1'}"
+                               statusbar_visible="draft,done,confirm,booking,cancel"/>
+
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="bus_name"></field>
+                                <field name="bus_type"></field>
+                                <field name="code"></field>
+                                <field name="from_point"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="pick_up" domain="[('district_id','=',from_point)]"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="to_point"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="drop_point" domain="[('district_id','=',to_point)]"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="route_name"
+                                       options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="schedule_date"></field>
+
+                                <field name="reserved_seat"></field>
+                                <field name="available_seat"></field>
+                                <field name="selected_seat"></field>
+
+                                <field name="fare"></field>
+                                <field name="number_of_tickets"></field>
+                                <field name="total_amount"></field>
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="view_Reservation_tree" model="ir.ui.view">
+            <field name="name">reservation.details.tree</field>
+            <field name="model">reservation.details</field>
+            <field name="arch" type="xml">
+                <tree>
+
+                    <field name="bus_name"></field>
+                    <field name="bus_type"></field>
+                    <field name="reserved_seat"></field>
+                    <field name="available_seat"></field>
+                    <field name="selected_seat"></field>
+
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="Reservation_calendar_view" model="ir.ui.view">-->
+<!--            <field name="name">reservation.details.calendar</field>-->
+<!--            <field name="model">reservation.details</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <calendar string="Reservation Calendar" mode="month" date_start="now">-->
+<!--                    <field name="schedule_date"></field>-->
+
+<!--                </calendar>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="Reservation_details_action" model="ir.actions.act_window">
+            <field name="name">reservation</field>
+            <field name="res_model">reservation.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+
+</odoo>

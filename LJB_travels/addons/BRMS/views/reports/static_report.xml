@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+
+		 <report
+                id="reservation_report"
+                string="Reservation Static"
+                model="reservation.details"
+                report_type="qweb-html"
+                name="brms.reservation_report"
+                file="brms.reservation_report"
+                menu="False"
+         />
+
+    <template id="reservation_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+
+                         <style>
+                            table, th, td {
+                            border: 2px solid black;
+                            border-collapse: collapse;
+                            }
+
+                            th, td{
+                            height: 30px;
+                            }
+
+                        </style>
+
+                        <div align="center">
+                        <b>
+                            <h4>Reservation Details</h4>
+                            </b>
+                    </div>
+
+                        <br></br>
+                    <br/>
+                    <center>
+                    <table class="table table-sm"
+                        style="line-height: 1;">
+                        <t t-set="s_no" t-value="1"/>
+                        <thead>
+                            <tr>
+                                <td width="4">S.No</td>
+                                <td>Bus Name</td>
+                                <td>From Point</td>
+                                <td>To Point</td>
+                                <td>Pick Up</td>
+                                <td>Drop</td>
+                                <td>Available Seat</td>
+                                <td>Selected Seat</td>
+                                <td>Fare</td>
+                                <td>Number Of Tickets</td>
+                                <td>Total Amount</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td>
+                                        <t t-esc="s_no"/>
+                                    </td>
+
+                                     <td>
+                                        <t t-esc="o.bus_name" />
+                                    </td>
+                                     <td>
+                                        <t t-esc="o.from_point" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.to_point" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.pick_up" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.drop_point" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.available_seat" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.selected_seat" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.fare" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.number_of_tickets" />
+                                    </td>
+
+                                    <td>
+                                        <t t-esc="o.total_amount" />
+                                    </td>
+
+
+                                </tr>
+                                <t t-set="s_no" t-value="s_no+1"/>
+                            </t>
+                        </tbody>
+                    </table>
+                    </center>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+    </data>
+</odoo>

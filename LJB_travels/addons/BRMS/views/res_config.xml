@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Blood Group-->
+        <record id="view_blood_group_form" model="ir.ui.view">
+            <field name="name">blood.group.form</field>
+            <field name="model">blood.group</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="blood_name" />
+                                <field name="code" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_blood_group_tree" model="ir.ui.view">
+            <field name="name">blood.group.tree</field>
+            <field name="model">blood.group</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="blood_name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_blood_group" model="ir.actions.act_window">
+            <field name="name">Blood Group</field>
+            <field name="res_model">blood.group</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        Bus Type-->
+
+          <record id="view_bus_type_form" model="ir.ui.view">
+            <field name="name">bus.type.form</field>
+            <field name="model">bus.type</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="bus_type" />
+                                <field name="code" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bus_type_tree" model="ir.ui.view">
+            <field name="name">bus.type.tree</field>
+            <field name="model">bus.type</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="bus_type"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_bus_type" model="ir.actions.act_window">
+            <field name="name">Bus Type</field>
+            <field name="res_model">bus.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        Bus Model-->
+
+         <record id="view_bus_model_form" model="ir.ui.view">
+            <field name="name">bus.model.form</field>
+            <field name="model">bus.model</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                         <field name="brand_image"  widget="image" class="oe_avatar"></field>
+                        <group>
+                            <group>
+                                <field name="model_name" />
+                                <field name="code" />
+                                 <field name="make" />
+                                 <field name="brand" />
+
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_bus_model_tree" model="ir.ui.view">
+            <field name="name">bus.model.tree</field>
+            <field name="model">bus.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="model_name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_bus_model" model="ir.actions.act_window">
+            <field name="name">Bus Model</field>
+            <field name="res_model">bus.model</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        Booking -->
+
+         <record id="view_booking_form" model="ir.ui.view">
+            <field name="name">booking.form</field>
+            <field name="model">booking</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="gender" />
+                                 <field name="age" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_booking_tree" model="ir.ui.view">
+            <field name="name">booking.tree</field>
+            <field name="model">booking</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="gender"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_bus_booking" model="ir.actions.act_window">
+            <field name="name">Booking</field>
+            <field name="res_model">booking</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        district-->
+
+
+        <record id="view_district_form" model="ir.ui.view">
+            <field name="name">name.District.form</field>
+            <field name="model">name.district</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group >
+                                <field name="district_name" />
+                                <field name="code" />
+                                 <field name="state_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_district_tree" model="ir.ui.view">
+            <field name="name">name.district.tree</field>
+            <field name="model">name.district</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="district_name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_district" model="ir.actions.act_window">
+            <field name="name">District </field>
+            <field name="res_model">name.district</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        Pick up Drop Point-->
+
+         <record id="view_pickup_drop_form" model="ir.ui.view">
+            <field name="name">pickup.drop.form</field>
+            <field name="model">pickup.drop</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group >
+                                <field name="name" ></field>
+                                <field name="code" ></field>
+                                 <field name="district_id" ></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_pickup_drop_tree" model="ir.ui.view">
+            <field name="name">pickup.drop.tree</field>
+            <field name="model">pickup.drop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_pickup_drop" model="ir.actions.act_window">
+            <field name="name">District </field>
+            <field name="res_model">pickup.drop</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        Route-->
+
+         <record id="view_route_details_form" model="ir.ui.view">
+            <field name="name">route.details.form</field>
+            <field name="model">route.details</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group >
+                                <field name="route_name" ></field>
+                                <field name="code" ></field>
+                                 <field name="from_point" ></field>
+                                <field name="to_point" ></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_route_details_tree" model="ir.ui.view">
+            <field name="name">route.details.tree</field>
+            <field name="model">route.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="route_name"></field>
+                    <field name="code"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_route_details" model="ir.actions.act_window">
+            <field name="name">Route details</field>
+            <field name="res_model">route.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+ <!--        fare -->
+
+         <record id="view_fare_details_form" model="ir.ui.view">
+            <field name="name">fare.details.form</field>
+            <field name="model">fare.details</field>
+            <field name="arch" type="xml">
+                <form import="1">
+                    <sheet>
+                        <group>
+                            <group >
+                                <field name="route_name" ></field>
+                                <field name="fare" ></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_fare_details_tree" model="ir.ui.view">
+            <field name="name">fare.details.tree</field>
+            <field name="model">fare.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="route_name"></field>
+                    <field name="fare"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_fare_details" model="ir.actions.act_window">
+            <field name="name">Fare Details </field>
+            <field name="res_model">fare.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+    </data>
+</odoo>

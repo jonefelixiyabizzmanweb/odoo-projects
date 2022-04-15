@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">employee.details.form</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                         <field name="image" widget="image" class="oe_avatar"></field>
+                        <group>
+                            <group string="Basic Details">
+                                <field name="employee_name"></field>
+                                <field name="code"></field>
+                                <field name="designation"></field>
+                                <field name="bus_handling" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="experience"></field>
+                                <field name="salary"></field>
+                                <field name="email_id"></field>
+                                <field name="mobile"></field>
+                            </group>
+                            <group string="Personal Information">
+                                <field name="dob"></field>
+                                <field name="age"></field>
+                                <field name="gender"></field>
+                               <field name="language_ids" widget="many2many_tags"></field>
+                                <field name="marital_status"></field>
+                                <field name="father_name"></field>
+                                <field name="mother_name"></field>
+                                <field name ="blood_name_id" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+<!--                                <field name="now"></field>-->
+                            </group>
+                            <group string="Address Details">
+                                <field name="aadhaar_no"></field>
+                                <field name="address1"></field>
+                                <field name="address2"></field>
+                                <field name="district_id"  options="{'no_create':True,'no_edit':True,'no_open':True}" ></field>
+                                <field name="state_id"  options="{'no_create':True,'no_edit':True,'no_open':True}" ></field>
+                                <field name="country_id"  options="{'no_create':True,'no_edit':True,'no_open':True}" ></field>
+                                <field name="pin_code"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_employee_tree" model="ir.ui.view">
+            <field name="name">employee.details.tree</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="employee_name"></field>
+                    <field name="code"></field>
+                    <field name="designation"></field>
+                    <field name="bus_handling"></field>
+                    <field name="email_id"></field>
+                    <field name="gender"></field>
+                    <field name="mobile"></field>
+
+                </tree>
+            </field>
+        </record>
+        <record id="view_employee_search" model="ir.ui.view">
+            <field name="name">employee.details.search</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="employee_name"></field>
+                    <field name="code"></field>
+                    <field name="designation"></field>
+                    <field name="bus_handling"></field>
+                </search>
+            </field>
+        </record>
+
+        <record id="employee_view_kanban" model="ir.ui.view">
+            <field name="name">employee.details.kanban</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <kanban class="o_hr_employee_kanban">
+                    <field name="employee_name"/>
+                    <field name="code"/>
+                    <field name="gender"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                               <div class="oe_kanban_details">
+                                   <ul>
+                                       <li>
+                                           Name:<field name="employee_name"/>
+                                       </li>
+                                       <li>
+                                           Id:<field name="code"/>
+                                       </li>
+                                       <li>
+                                           Designation:<field name="designation"/>
+                                       </li>
+                                       <li>
+                                          Bus Handling:<field name="bus_handling"/>
+                                       </li>
+                                       <li>
+                                           Email<field name="email_id"/>
+                                       </li>
+                                       <li>
+                                           mobile<field name="mobile"/>
+                                       </li>
+                                   </ul>
+                               </div>
+                           </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <record id="employee_graph_view" model="ir.ui.view">
+            <field name="name">employee.details.graph</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <graph type="pie">
+                    <field name="gender"/>
+                </graph>
+            </field>
+        </record>
+        <record id="employee_pivot_view" model="ir.ui.view">
+            <field name="name">employee.details.pivot</field>
+            <field name="model">employee.details</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="employee_name" type="row"/>
+                    <field name="dob" interval="month" type="col"/>
+                </pivot>
+            </field>
+        </record>
+
+<!--        <record id="employee_calendar_view" model="ir.ui.view">-->
+<!--            <field name="name">employee.details.calendar</field>-->
+<!--            <field name="model">employee.details</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                 <calendar string="Employee Calendar" mode="month" date_start="now" >-->
+<!--                    <field name="employee_name"/>-->
+<!--                    <field name="employee_id"/>-->
+<!--                </calendar>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record id="employee_details_action" model="ir.actions.act_window">
+            <field name="name">employee</field>
+            <field name="res_model">employee.details</field>
+            <field name="view_mode">tree,form,search,kanban,graph,pivot</field>
+        </record>
+
+
+    </data>
+</odoo>
+

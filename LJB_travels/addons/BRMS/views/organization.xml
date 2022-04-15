@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_Organization_form" model="ir.ui.view">
+            <field name="name">organization.details.form</field>
+            <field name="model">organization.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                         <field name="approval_license"></field>
+                        <group>
+                            <group string="Organization">
+                                <field name="organization_name"></field>
+                                <field name="org_code"></field>
+                                <field name="year_of_start"></field>
+                                <field name="email_id"></field>
+                                <field name="total_bus"></field>
+                                <field name="total_employees"></field>
+                                <field name="contact"></field>
+                                <field name="address1"></field>
+                                <field name="district_id" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                            </group>
+                        </group>
+                        <group>
+                        <group>
+                              <field name="state_id" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                              <field name="country_id" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                              <field name="pin_code" size="6"></field>
+                              <field name="website"></field>
+                        </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record id="view_Organization_tree" model="ir.ui.view">
+            <field name="name">organization.details.tree</field>
+            <field name="model">organization.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="organization_name"></field>
+                    <field name="org_code"></field>
+                    <field name="year_of_start"></field>
+                    <field name="email_id"></field>
+                    <field name="contact"></field>
+                </tree>
+            </field>
+         </record>
+
+        <record id="Organization_details_action" model="ir.actions.act_window">
+            <field name="name">organization</field>
+            <field name="res_model">organization.details</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+</data>
+</odoo>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_customer_form" model="ir.ui.view">
+            <field name="name">customer.details.form</field>
+            <field name="model">customer.details</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!--                        <field name="image" widget="image" class="oe_avatar"></field>-->
+                        <group>
+                            <group>
+                                <field name="name"></field>
+                                <field name="father_name"></field>
+                                <field name ="code"></field>
+                                <field name="email_id"></field>
+                                <field name="blood_name_id"></field>
+                                <field name="aadhar_no"></field>
+                                <field name="gender"></field>
+                                <field name="dob"></field>
+                                <field name="age"></field>
+                                <field name="language_ids" widget="many2many_tags"/>
+                            </group>
+                            <group string="Address" create="0" edit="0">
+                                <field name="address1"></field>
+                                <field name="address2"></field>
+                                <field name="district_id" options="{'no_create':True,'no_edit':True,'no_open':True}" ></field>
+                                <field name="state_id" options="{'no_create':True,'no_edit':True,'no_open':True}"  ></field>
+                                <field name="country_id" options="{'no_create':True,'no_edit':True,'no_open':True}"></field>
+                                <field name="pin_code" size="6"></field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="view_customer_tree" model="ir.ui.view">
+            <field name="name">customer.details.tree</field>
+            <field name="model">customer.details</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"></field>
+                    <field name="email_id"></field>
+                    <field name="gender"></field>
+                    <field name="mobile"></field>
+                    <field name="aadhar_no"></field>
+                </tree>
+            </field>
+        </record>
+        <record id="view_customer_search" model="ir.ui.view">
+            <field name="name">customer.details.search</field>
+            <field name="model">customer.details</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"></field>
+                    <field name="email_id"></field>
+                    <field name="age"></field>
+                    <field name="blood_name_id"></field>
+                    <field name="gender"></field>
+                    <filter string="Male" name="gender_male"
+                            domain="[('gender','=','male')]"/>
+                    <filter string="Female" name="gender_female"
+                            domain="[('gender','=','female')]"/>
+
+                    <group expand="0" string="Group By">
+                        <filter name="gender" string="Gender"
+                                context="{'group_by': 'gender'}"/>
+                    </group>
+
+
+                </search>
+            </field>
+        </record>
+         <record id="customer_details_action" model="ir.actions.act_window">
+            <field name="name">customer</field>
+            <field name="res_model">customer.details</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+    </data>
+</odoo>

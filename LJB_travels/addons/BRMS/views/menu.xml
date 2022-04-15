@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--       bus.details -->
+        <menuitem id="menu_bus_details" name="Bus"  sequence="1" web_icon="BRMS,static\description\icon.png" />
+<!--       customer -->
+        <menuitem id="menu_customer_details" name="Customer" action="customer_details_action" parent="menu_bus_details" sequence="2"/>
+<!--        employee-->
+        <menuitem id="menu_employee_details" name="Employee" action="employee_details_action" parent="menu_bus_details" sequence="3" />
+<!--        organization-->
+         <menuitem id="menu_Organization_details" name="Organization" action="Organization_details_action" parent="menu_bus_details" sequence="4"/>
+<!--         payment-->
+         <menuitem id="menu_Payment_details" name="Payment" action="Payment_details_action" parent="menu_bus_details" sequence="6" />
+<!--        reservation-->
+        <menuitem id="menu_Reservation_details" name="Reservation" action="Reservation_details_action" parent="menu_bus_details" sequence="5" />
+<!--     res_configuration    -->
+        <menuitem id="menu_res_config" name="Configuration" sequence="2" />
+<!--        blood group-->
+        <menuitem id="menu_blood_group" name="Blood Group" parent="menu_res_config" action="action_blood_group" sequence="2" />
+<!--        Language-->
+        <menuitem id="menu_language_details" name="language" action="language_details_action" parent="menu_res_config" sequence="3" />
+<!--         bus type-->
+        <menuitem id="menu_bus_type" name="Bus Type" action="action_bus_type" parent="menu_res_config" sequence="4" />
+<!--         Bus Model-->
+        <menuitem id="menu_bus_model" name="Bus Model" action="action_bus_model" parent="menu_res_config" sequence="5" />
+<!--        Booking -->
+         <menuitem id="menu_bus_booking" name="Booking" action="action_bus_booking" parent="menu_res_config" sequence="1" />
+<!--        district-->
+         <menuitem id="menu_district" name="District" action="action_district" parent="menu_res_config" sequence="6" />
+<!--           drop pick up-->
+         <menuitem id="menu_pickup_drop" name="pick up drop" action="action_pickup_drop" parent="menu_res_config" sequence="6" />
+<!--           route-->
+         <menuitem id="menu_route_details" name="Route" action="action_route_details" parent="menu_res_config" sequence="7" />
+<!--           fare-->
+         <menuitem id="menu_fare_details" name="fare" action="action_fare_details" parent="menu_res_config" sequence="8" />
+<!--    <wizard>-->
+        <menuitem id="menu_report" name ="Report" parent="menu_bus_details" sequence="7"/>
+
+        <menuitem id="menu_reservation_report" name="Wizard" action="wizard_reservation_report_action" parent="menu_report" sequence="9" />
+<!--        amount-->
+<!--        <menuitem-->
+<!--                id="menu_reservation_amount-->
+<!--                name="reservation amount"-->
+<!--                action="action_reservation_amount"-->
+<!--                parent="menu_report"-->
+<!--                sequence="10"/>-->
+<!--        seat-->
+        <menuitem
+                id="menu_reservation_seat_wizard"
+                name="Seat Wizard"
+                action="action_reservation_seat"
+                parent="menu_report"
+                sequence="11"/>
+<!--        create amount-->
+        <menuitem
+                id="create_amount"
+                name="create amount"
+                action="action_create_amount"
+                parent ="menu_report"
+                sequence="12"/>
+
+    </data>
+</odoo>

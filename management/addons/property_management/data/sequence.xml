@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		<record id="sequence_order_property_details" model="ir.sequence">
+			<field name="name">Property Details Sequence</field>
+			<field name="code">property.details.seq</field>
+			<field name="prefix">PD</field>
+			<field name="padding">3</field>
+		</record>
+
+		<record id="sequence_order_property_maintenance" model="ir.sequence">
+			<field name="name">Property Maintenance Sequence</field>
+			<field name="code">property.maintenance.seq</field>
+			<field name="prefix">PM</field>
+			<field name="padding">3</field>
+		</record>
+
+		<record id="sequence_order_preventive_maintenance" model="ir.sequence">
+			<field name="name">Preventive Maintenance Sequence</field>
+			<field name="code">preventive.maintenance.seq</field>
+			<field name="prefix">PR</field>
+			<field name="padding">3</field>
+		</record>
+<!--		product-->
+		<record id="sequence_order_product_details" model="ir.sequence">
+			<field name="name">Product Details</field>
+			<field name="code">property_management.product.details</field>
+			<field name="prefix">PT</field>
+			<field name="padding">3</field>
+			<field name="company_id" eval='False'/>
+		</record>
+	</data>
+</odoo>

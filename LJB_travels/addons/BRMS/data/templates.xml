@@ -1,0 +1,58 @@
+
+<odoo>
+
+        <template id="timing_details">
+            <t t-call="website.layout">
+                <div class="page" align="center">
+                    <center>Timing Details</center>
+                    <table border="2px" width="80%">
+                        <tr>
+                            <th>Bus</th>
+                            <th>Route</th>
+                            <th>Timing</th>
+                        </tr>
+                        <t t-foreach="timing" t-as="stu">
+                            <tr>
+                                <td><t t-esc="stu['bus_name']"/></td>
+                                <td><t t-esc="stu['route_name']"/></td>
+                                <td><t t-esc="stu['timing']"/></td>
+
+                            </tr>
+                        </t>
+
+                    </table>
+                    <br/>
+                    <center>
+                        <a type="button" herf="/timing_create" ></a>
+                    </center>
+                </div>
+            </t>
+    </template>
+
+    <template id="customer">
+    <t t-call="website.layout">
+        <div class="page" align="center">
+            <center>Customer Details</center>
+            <table border="2px" width="80%">
+
+                    <tr>
+                        <th>name</th>
+                        <td><input class="form-control" type="Char" name="name"></input></td>
+                    </tr>
+
+                    <tr>
+                        <th>name</th>
+                        <td><input class="form-control" type="Char" name="name"></input></td>
+                    </tr>
+
+
+            </table>
+            <br/>
+            <center>
+                <a type="button" herf="/timing_create"></a>
+            </center>
+        </div>
+    </t>
+    </template>
+
+</odoo>
